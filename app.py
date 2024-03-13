@@ -119,7 +119,7 @@ Max_Pay = px.bar(
                   y = "Count (n)")
     )
 '''
-Max_Pay.update_layout(xaxis_type='category') #legend is a little fucky
+Max_Pay.update_layout(xaxis_type='category')
 custom_legend_name(['$0',
                     '$0-$5',
                     '$5-$10',
