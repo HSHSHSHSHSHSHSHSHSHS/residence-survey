@@ -1,2 +1,3 @@
 Preview: https://din-qsdu.onrender.com
-[Image](/residence-survey/blob/main/img.png)
+
+![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img.png)
