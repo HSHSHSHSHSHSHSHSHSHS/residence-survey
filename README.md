@@ -1,4 +1,4 @@
-Preview: https://dinsur-qsdu.onrender.com
+Preview: https://dinsur.onrender.com/
 
 ![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img1.png)
 
