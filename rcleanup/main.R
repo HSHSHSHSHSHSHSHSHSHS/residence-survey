@@ -13,16 +13,12 @@ library(stringr)
 
 # Import ------------------------------------------------------------------
 
-dininghall_og <- read_csv("/Users/weeb/Downloads/*data proj/Dining Hall R/dininghall.csv") #backup do not touch!
-dininghall <- read_csv("/Users/weeb/Downloads/*data proj/Dining Hall R/dininghall.csv") #use
+dininghall_og <- read_csv("/Users/weeb/Downloads/*data proj/Dining/Dining Hall R/dininghall.csv") #backup do not touch!
+dininghall <- read_csv("/Users/weeb/Downloads/*data proj/Dining/Dining Hall R/dininghall.csv") #use
 glimpse (dininghall)
 
 
 # rename qs ---------------------------------------------------------------
-
-
-
-# delete live in residence ------------------------------------------------
 
 dininghall <- dininghall %>%
   rename("Responder_Number" = 'Responder #',
@@ -60,10 +56,28 @@ dininghall_filtered <- dininghall %>%
          | !is.na(Quality_Factor)
          | !is.na(Variety_Factor))
 
+# Mutate NAs --------------------------------------------------------------
+
+dininghall_filtered$RVC <- ifelse(is.na(dininghall_filtered$RVC), "2", dininghall_filtered$RVC)
+dininghall_filtered$BMH <- ifelse(is.na(dininghall_filtered$BMH), "2", dininghall_filtered$BMH)
+dininghall_filtered$New <- ifelse(is.na(dininghall_filtered$New), "2", dininghall_filtered$New)
+dininghall_filtered$C4 <- ifelse(is.na(dininghall_filtered$C4), "2", dininghall_filtered$C4)
+dininghall_filtered$Eating_Freq <- ifelse(is.na(dininghall_filtered$Eating_Freq), "Missing", dininghall_filtered$Eating_Freq)
+dininghall_filtered$Mealplan <- ifelse(is.na(dininghall_filtered$Mealplan), "Missing", dininghall_filtered$Mealplan)
+
+# Mutate Y_N to 1 0 -------------------------------------------------------
+
+dininghall_filtered_check <- dininghall_filtered %>%
+  mutate(RVC = ifelse(RVC == "Yes", 1, ifelse(RVC == "No", 0, 2)),
+         BMH = ifelse(BMH == "Yes",1, ifelse(BMH == "No", 0, 2)),
+         New = ifelse(New == "Yes",1,ifelse(New == "No", 0, 2)),
+         C4 = ifelse(C4 == "Yes",1,ifelse(C4 == "No", 0, 2))
+         ) #%>%
+  #mutate_at(vars(RVC:C4), as.numeric)
 
 # Mutate thievery ---------------------------------------------------------
 
-dininghall_filtered_plus_plus <- dininghall_filtered %>%
+dininghall_filtered_plus_plus <- dininghall_filtered_check %>%
   mutate(Food_Thievery_YN = Food_Thievery)
 
 dininghall_filtered_ex <- dininghall_filtered_plus_plus %>%
@@ -102,4 +116,4 @@ dininghall_filtered_extra <- dininghall_filtered_plus %>%
 
 # Export lol --------------------------------------------------------------
 
-write.csv(dininghall_filtered_extra,file='/Users/weeb/Downloads/*data proj/Dining Hall R/Dininghall_r.csv', row.names=FALSE)
+write.csv(dininghall_filtered_extra,file='/Users/weeb/Downloads/*data proj/Dining/Dining Hall R/Dininghall_r.csv', row.names=FALSE)
