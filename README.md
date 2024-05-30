@@ -1,3 +1,7 @@
 Preview: https://din-qsdu.onrender.com
 
-![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img.png)
+![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img1.png)
+
+Filter:
+
+![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img2.png)
