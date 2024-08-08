@@ -4,4 +4,4 @@ Preview: https://dinsur.onrender.com/
 
 Filter:
 ![Image](https://github.com/HSHSHSHSHSHSHSHSHSHS/residence-survey/blob/main/img2.png)
-![image](https://i.imgur.com/tKe7jVc.mp4)
+<img src="https://i.imgur.com/tKe7jVc.mp4"/>
