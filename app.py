@@ -83,7 +83,7 @@ app.layout = html.Div(
                         ),
                         html.Div(
                             [
-                            html.H4("Frequency of eating at dining halls (weekly basis):"),
+                            html.H4("Frequency of eating at dining halls (daily basis):"),
                             dbc.Checklist(
                                 id="filter_freq",
                                 options=[
